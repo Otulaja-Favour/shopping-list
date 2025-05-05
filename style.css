@@ -386,6 +386,14 @@ main {
     color: var(--dark);
 }
 
+#badge{
+    text-align: center;
+    width: 30px;
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+
+
 .pagination {
     display: flex;
     justify-content: center;
