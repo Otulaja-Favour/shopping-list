@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleShop - Modern Ecommerce</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <a href="#" class="logo">
+                <i class="fas fa-shopping-bag"></i>
+                StyleShop
+            </a>
+
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for products...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="nav-icons">
+                <a href="#" class="nav-icon" id="account-icon">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="#" class="nav-icon" id="wishlist-icon">
+                    <i class="fas fa-heart"></i>
+                    <span class="badge wishlist-count">0</span>
+                </a>
+                <a href="#" class="nav-icon" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge cart-count">0</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="category-nav">
+            <div class="container">
+                <ul class="category-list" id="category-list">
+                    <li><a href="#" class="active" data-category="all">All Products</a></li>
+                    <!-- Categories will be added dynamically -->
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>Discover the Latest Trends</h1>
+                <p>Explore our wide range of products with amazing deals and discounts!</p>
+                <a href="#products" class="btn btn-primary">Shop Now</a>
+            </section>
+
+            <!-- Products Section -->
+            <section id="products">
+                <div class="section-title">
+                    <h2>Our Products</h2>
+                </div>
+
+                <div class="filter-container">
+                    <div class="filter-control">
+                        <label for="sort-by">Sort By:</label>
+                        <select id="sort-by">
+                            <option value="default">Popularity</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Rating</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-control">
+                        <label for="filter-category">Category:</label>
+                        <select id="filter-category">
+                            <option value="all">All Categories</option>
+                            <!-- Categories will be added dynamically -->
+                        </select>
+                    </div>
+
+                    <div class="filter-control">
+                        <label for="price-range">Price Range:</label>
+                        <select id="price-range">
+                            <option value="all">All Prices</option>
+                            <option value="0-25">$0 - $25</option>
+                            <option value="25-50">$25 - $50</option>
+                            <option value="50-100">$50 - $100</option>
+                            <option value="100-500">$100+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="product-grid" id="product-grid">
+                    <!-- Products will be loaded dynamically -->
+                    <div class="loading">
+                        <p>Loading products...</p>
+                    </div>
+                </div>
+
+                <div class="pagination" id="pagination">
+                    <!-- Pagination buttons will be added dynamically -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>StyleShop</h3>
+                    <p>Your one-stop destination for the latest fashion trends and lifestyle products.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">All Products</a></li>
+                        <li><a href="#">Men's</a></li>
+                        <li><a href="#">Women's</a></li>
+                        <li><a href="#">Jewelry</a></li>
+                        <li><a href="#">Electronics</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Subscribe</h3>
+                    <p>Subscribe to our newsletter to get updates on our latest offers!</p>
+                    <div class="newsletter-form" style="margin-top: 30px;">
+                        <input type="email" placeholder="Your email address" class="newsletter-input" style="border-radius: 10px; padding: 8px; border: none;">
+                        <button class="newsletter-btn" style="border-radius: 10px; padding: 8px; border: none;">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 StyleShop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="product-detail" id="product-detail">
+                <!-- Product details will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <div class="cart-title">
+                <i class="fas fa-shopping-cart"></i>
+                Your Cart
+            </div>
+            <button class="cart-close" id="cart-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded dynamically -->
+            <div class="empty-cart" id="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+                <a href="#products" class="btn btn-primary">Start Shopping</a>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <div class="cart-total-label">Total:</div>
+                <div class="cart-total-price" id="cart-total">$0.00</div>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">
+                <i class="fas fa-lock"></i>
+                Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
